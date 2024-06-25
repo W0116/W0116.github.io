@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background-image: url('picture/cc1.jpg');
+      background-size: cover;
+    }
+  .login-container {
+      width: 300px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+  .login-container h2 {
+      text-align: center;
+      color: #000;
+    }
+  .login-container input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+  .login-container button {
+      width: 100%;
+      padding: 10px;
+      background-color: #ffd800;
+      color: #000;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  .error-message {
+      color: red;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="login-container">
+    <h2>欢迎来到小黄人世界</h2>
+    <input type="text" id="username" placeholder="用户名" >
+    <input type="password" id="password" placeholder="密码">
+    <button onclick="login()">登录</button>
+    <div id="error" class="error-message"></div>
+  </div>
+
+  <script>
+    function login() {
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+
+      if (username === '小黄人' && password === '123456') {
+        window.location.href = 'index.html';
+      } else {
+        document.getElementById('error').innerHTML = '登录失败';
+      }
+    }
+  </script>
+</body>
+</html>
